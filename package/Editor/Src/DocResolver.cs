@@ -121,7 +121,7 @@ namespace Puerts
                 //增加文档查找路径 
                 if (!File.Exists(xmlFilePath))
                 {
-                    xmlFilePath = xmlFilePath.Replace("Library\\ScriptAssemblies\\", "Library\\CommonetDocs\\");
+                    xmlFilePath = xmlFilePath.Replace("Library/ScriptAssemblies/", "Temp/Bin/Debug/P4/");
                 }
                 return resolver.ParseXml(xmlFilePath);
             }
