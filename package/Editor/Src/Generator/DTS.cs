@@ -438,7 +438,7 @@ namespace Puerts.Editor
                         result.IsEnum = true;
                         var KeyValues = type.GetFields(BindingFlags.Static | BindingFlags.Public)
                             .Where(f => f.Name != "value__")
-                            .Select(f => f.Name + " = " + Convert.ChangeType(f.GetValue(null), Enum.GetUnderlyingType(type))).ToArray();
+                            .Select(f => $"\n{DocResolver.GetTsDocument(f)}\n" + f.Name + " = " + Convert.ChangeType(f.GetValue(null), Enum.GetUnderlyingType(type))).ToArray();
                         result.EnumKeyValues = string.Join(", ", KeyValues);
                     }
 

@@ -231,7 +231,7 @@ namespace Puerts
                 return null;
             }
             var declType = fieldInfo.DeclaringType;
-            var xName = declType.FullName + "." + fieldInfo.Name;
+            var xName = declType.GetFriendlyName() + "." + fieldInfo.Name;
             DocBody body;
             _fdocs.TryGetValue(xName, out body);
             return body;
