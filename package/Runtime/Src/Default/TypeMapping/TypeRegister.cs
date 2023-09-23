@@ -584,6 +584,7 @@ namespace Puerts
                 {
                     bool hasNoParametersCtor = false;
                     var constructorWraps = type.GetConstructors(flag)
+                        .Where(m => !m.IsStatic) // ignore static constructor ".cctor"
                         .Select(m =>
                         {
                             if (m.GetParameters().Length == 0)

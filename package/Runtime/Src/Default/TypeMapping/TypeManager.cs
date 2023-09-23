@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 using Puerts.TypeMapping;
+using UnityEngine;
 
 namespace Puerts
 {
@@ -232,7 +233,7 @@ namespace Puerts
                     baseTypeId = GetTypeId(isolate, type.BaseType);
                 }
                 
-                typeId = TypeRegister.RegisterType(type, baseTypeId, false);
+                typeId = TypeRegister.RegisterType(type, baseTypeId, true);
                 typeIdMap[type] = typeId;
                 typeMap[typeId] = type;
             }
