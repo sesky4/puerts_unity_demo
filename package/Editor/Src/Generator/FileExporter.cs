@@ -34,7 +34,7 @@ namespace Puerts.Editor
                     genTypes = configure["Puerts.BindingAttribute"].Select(kv => kv.Key)
                         .Where(o => o is Type)
                         .Cast<Type>()
-                        .Where(t => !t.IsGenericTypeDefinition && !t.Name.StartsWith("<"))
+                        // .Where(t => !t.IsGenericTypeDefinition && !t.Name.StartsWith("<"))
                         .Distinct()
                         .ToList();
                 }
